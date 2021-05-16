@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+//COMPONENETS
+// import IconAccount from './components/IconAccount'
+// import IconAirCompany from './components/IconAirCompany'
+// import IconEyeCam from './components/IconEyeCam'
+// import IconFaceit from './components/IconFaceit'
+// import IconInsure from './components/IconInsure'
+// import IconLoopStudios from './components/IconLoopStudios'
+// import IconManage from './components/IconManage'
+// import IconMyHome from './components/IconMyHome'
+// import IconPhotoSnap from './components/IconPhotoSnap'
+// import IconShortly from './components/IconShortly'
+import Tags from './components/Tags'
+
+
+//ESTILOS
+import './styles/Global.css'
+import styles from './styles/App.module.css'
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <section className={ styles.App }>
+      <header className={ styles.Header }>
+
       </header>
-    </div>
-  );
+      <main className={ styles.Main }> 
+        <Tags />
+      </main>
+    </section>
+  )
 }
 
 export default App;

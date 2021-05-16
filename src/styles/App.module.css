@@ -1,0 +1,15 @@
+.App {
+    display: grid;
+    grid-template: 200px minmax(50px, 1fr) / 1fr;
+    background-color: var(--Light-Grayish-Cyan-BG);
+}
+
+.Header {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: salmon;
+}
+
+.Main {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: slateblue;
+}
