@@ -9,8 +9,8 @@
 // import IconMyHome from './components/IconMyHome'
 // import IconPhotoSnap from './components/IconPhotoSnap'
 // import IconShortly from './components/IconShortly'
-import Tags from './components/Tags'
-
+// import Tags from './components/Tags'
+import Card from './components/Card'
 
 //ESTILOS
 import './styles/Global.css'
@@ -25,7 +25,10 @@ function App() {
 
       </header>
       <main className={ styles.Main }> 
-        <Tags />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </main>
     </section>
   )

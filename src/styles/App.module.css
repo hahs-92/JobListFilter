@@ -1,6 +1,6 @@
 .App {
     display: grid;
-    grid-template: 200px minmax(50px, 1fr) / 1fr;
+    grid-template: 200px minmax(50px, 1fr) / minmax(320px, 1fr);
     background-color: var(--Light-Grayish-Cyan-BG);
 }
 
@@ -11,5 +11,12 @@
 
 .Main {
     grid-area: 2 / 1 / 3 / 2;
-    background-color: slateblue;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: auto;
+    justify-self: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; */
+    background-color: var(--Light-Grayish-Cyan-BG);
 }
