@@ -2,15 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right:20px;
-    width: fit-content;
-    height: 25px;
+    margin-right:12px;
+    height: 35px;
     border-radius: 5px;
     background: var(--Light-Grayish-Cyan-BG);
-
+    border: none;
+    cursor: pointer;
     color: var(--Desaturated-Dark-Cyan);
 }
 
-.Tags h3 {
+.Tags h2 {
     padding: 0px 5px;
 }

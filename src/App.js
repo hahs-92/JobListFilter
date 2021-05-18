@@ -1,36 +1,58 @@
+import { useState } from 'react'
+
 //COMPONENETS
-// import IconAccount from './components/IconAccount'
-// import IconAirCompany from './components/IconAirCompany'
-// import IconEyeCam from './components/IconEyeCam'
-// import IconFaceit from './components/IconFaceit'
-// import IconInsure from './components/IconInsure'
-// import IconLoopStudios from './components/IconLoopStudios'
-// import IconManage from './components/IconManage'
-// import IconMyHome from './components/IconMyHome'
-// import IconPhotoSnap from './components/IconPhotoSnap'
-// import IconShortly from './components/IconShortly'
-// import Tags from './components/Tags'
 import Card from './components/Card'
 
 //ESTILOS
 import './styles/Global.css'
 import styles from './styles/App.module.css'
 
+//INFO
+import data from './dataInitial'
+
+//CONTEXT
+import AppContext from './context/App'
+
 
 function App() {
+  const [ filters, setFilters ] = useState([])
 
   return (
-    <section className={ styles.App }>
-      <header className={ styles.Header }>
+    <AppContext.Provider  value={ { filters, setFilters }}>
 
-      </header>
-      <main className={ styles.Main }> 
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </main>
-    </section>
+      <section className={ styles.App }>
+        <header className={ styles.Header }></header>
+
+        <section className={ styles.Filter }>
+          <div className={ styles.FilterWrapper }>
+          
+          </div>
+        </section>
+
+        <main className={ styles.Main }> 
+          {
+            data.map( item => (
+              <Card  
+                key={ item.id } 
+                company={ item.company } 
+                logo={ item.logo } 
+                new={ item.new }
+                featured={ item.featured }
+                position={ item.position } 
+                postedAt = { item.postedAt }
+                contract={ item.contract }
+                location={ item.location }
+                role={ item.role }
+                level={ item.level }
+                languages={ item.languages }
+                tools={ item.tools }
+                />
+            ))
+          }
+        </main>
+      </section>
+
+    </AppContext.Provider>
   )
 }
 
