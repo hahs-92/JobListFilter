@@ -14,9 +14,12 @@
 
 .Filter {
     justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     width: 90%;
-    height: 100px;
     max-width: 1100px;
     grid-area: 2 / 1 / 4 / 2;
     border-radius: 5px;
@@ -26,6 +29,24 @@
 
 .FilterActive {
     display: none;
+}
+
+.FilterWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+}
+
+.CardTag {
+    display: flex;
+    justify-content: center;
+    margin: 5px 5px 5px 0px;
+}
+
+.ButtonWrapper button {
+    border: none;
+    background: white;
+    cursor: pointer;
 }
 
 .Main {

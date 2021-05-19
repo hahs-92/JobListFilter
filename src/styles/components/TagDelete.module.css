@@ -1,0 +1,12 @@
+.TagDelete {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: var(--Desaturated-Dark-Cyan);
+    background-position: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: url('../../assets/icon-remove.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+}

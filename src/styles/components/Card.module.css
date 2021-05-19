@@ -101,6 +101,7 @@
 .Tags {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding-top: 20px;
     height: 50%;
     width: 100%;

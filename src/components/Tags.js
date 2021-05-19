@@ -7,20 +7,19 @@ import AppContext from '../context/App'
 import styles from '../styles/components/Tags.module.css'
 
 const Tags = (props) => {
-    const value = []
     const { filters, setFilters } = useContext(AppContext)
 
     const handleOnClick = (e) => {
-        // console.log(e.target.firstChild.data)
-        value.push(e.target.firstChild.data)
-        setFilters(value)
-        console.log(filters)
+        // filters.push(e.target.firstChild.data)
+        setFilters(filters => [ ...filters, e.target.innerText ])
     }
 
     return(
-       <button className={ styles.Tags } type='button' aria-label='Tags' onClick={ handleOnClick }>
-           <h2>{ props.tag }</h2>
-       </button>
+    
+        <button className={ styles.Tags } type='button' aria-label='Tags' onClick={ handleOnClick }>
+            <h2>{ props.tag }</h2>
+        </button>
+        
     )
 }
 

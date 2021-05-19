@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 //COMPONENETS
 import Card from './components/Card'
+import Tags from './components/Tags'
+import TagDelete from './components/TagDelete'
 
 //ESTILOS
 import './styles/Global.css'
@@ -17,17 +19,37 @@ import AppContext from './context/App'
 function App() {
   const [ filters, setFilters ] = useState([])
 
+  const removeFilters = () => {
+    setFilters([])
+  } 
+
   return (
     <AppContext.Provider  value={ { filters, setFilters }}>
 
       <section className={ styles.App }>
         <header className={ styles.Header }></header>
 
-        <section className={ styles.Filter }>
-          <div className={ styles.FilterWrapper }>
-          
-          </div>
+       {
+         filters.length > 0 &&
+          <section className={ styles.Filter }>
+            <div className={ styles.FilterWrapper }>
+              {
+                filters.map(item => (
+                  <article key={ item } className={ styles.CardTag }>
+                    <Tags  key={ item } tag={ item } value={ item.item } name={ item }/>
+                    <TagDelete />
+                  </article>
+                ))
+              }
+            
+            </div>
+            <div className={ styles.ButtonWrapper }>
+              <button aria-label='clear button' type='button' onClick={ removeFilters }>
+                  <h3>Clear</h3>
+              </button>
+            </div>
         </section>
+       }
 
         <main className={ styles.Main }> 
           {
