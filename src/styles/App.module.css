@@ -50,6 +50,14 @@
     cursor: pointer;
 }
 
+.ButtonWrapper h3 {
+    cursor: pointer;
+}
+
+.ButtonWrapper h3:hover {
+    color: var(--Desaturated-Dark-Cyan)
+}
+
 .Main {
     grid-area: 4 / 1 / 5 / 2;
     display: flex;
