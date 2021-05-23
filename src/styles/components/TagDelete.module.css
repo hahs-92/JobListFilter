@@ -9,4 +9,9 @@
     background-image: url('../../assets/icon-remove.svg');
     background-repeat: no-repeat;
     background-size: 50%;
+    cursor:pointer
+}
+
+.TagDelete:hover {
+    background-color: var(--Very-Dark-Grayish-Cyan);
 }

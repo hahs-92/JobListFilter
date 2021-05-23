@@ -5,10 +5,21 @@ import Tags from './Tags'
 import styles from '../styles/components/Card.module.css'
 
 const Card = (props) => {
-    const tags = [ ...props.languages]
-    tags.unshift(...props.tools)
-    tags.unshift(props.level)
-    tags.unshift(props.role )
+
+    // const tags = [ ...props.languages]
+    // tags.unshift(...props.tools)
+    // tags.unshift(props.level)
+    // tags.unshift(props.role )
+
+    // const tags = [ props.role, props.level, ...props.tools, ...props.languages ]
+ 
+    // const arrayTags = [
+    //     {  role: props.role },
+    //     {  level: props.level },
+    //     { tools: [ ...props.tools] },
+    //     { languages: [ ...props.languages] }
+    // ]
+
     return (
         <article className={ styles.Card }>
             
@@ -53,11 +64,11 @@ const Card = (props) => {
                 </div>
 
                 <div className={ styles.Tags }>
-                    {
-                        tags.map(item => (
-                            <Tags key={ item } tag={ item } />
-                        ))
-                    }
+
+                    <Tags key={ props.role } tag={ props.role } value='role' />
+                    <Tags key={ props.level } tag={ props.level } value='level' />
+                    { props.tools && props.tools.map(item => <Tags key={ item } tag={ item }  value='tools'/>)}
+                    { props.languages && props.languages.map(item => <Tags key={ item } tag={ item } value='languages' />)}
             
                 </div>
 
