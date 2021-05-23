@@ -1,25 +1,12 @@
 //COMPONENTS
 import Tags from './Tags'
-
 //ESTILOS
 import styles from '../styles/components/Card.module.css'
 
+// _____________________________________________________________________________
+
+
 const Card = (props) => {
-
-    // const tags = [ ...props.languages]
-    // tags.unshift(...props.tools)
-    // tags.unshift(props.level)
-    // tags.unshift(props.role )
-
-    // const tags = [ props.role, props.level, ...props.tools, ...props.languages ]
- 
-    // const arrayTags = [
-    //     {  role: props.role },
-    //     {  level: props.level },
-    //     { tools: [ ...props.tools] },
-    //     { languages: [ ...props.languages] }
-    // ]
-
     return (
         <article className={ styles.Card }>
             

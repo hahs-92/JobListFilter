@@ -34,6 +34,7 @@
 .FilterWrapper {
     display: flex;
     flex-wrap: wrap;
+    padding: 12px 0px;
     width: 75%;
 }
 
@@ -64,6 +65,9 @@
 @media (min-width: 767px) {
     .Header {
         background-image: url('../assets/bg-header-desktop.svg');
+    }
+    .Filter {
+        justify-content: space-around;
     }
 }
 

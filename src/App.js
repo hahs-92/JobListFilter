@@ -26,44 +26,24 @@ function App() {
     setFilters([])
   } 
 
-  const upDateData = (filters) => {
-    let filterArr = []
-    let nd
+  const updateData = (filters) => {
+    let info = data
+    if(filters.length === 0) {
+      info = data
+    } else {
 
-    if(filters.length  === 1) {
-
-      filters.forEach(item => filterArr = Object.entries(item))
-
-      if(filterArr[0][0] === 'level' || filterArr[0[0]] === 'role') {
-        //OBJETOS
-        nd = data.filter(item => item[filterArr[0][0]] === filterArr[0][1])
-      } else {
-        //ARRAYS
-        nd = data.filter(item => item[filterArr[0][0]].includes(filterArr[0][1]))
-      }
-    } 
-
-    if(filters.length === 2) {
-      filters.forEach(item =>  filterArr.push(Object.entries(item)) )
-
-      if( (filterArr[0][0][0] === 'level' || filterArr[0][0][0] === 'role') && (filterArr[1][0][0] === 'level' || filterArr[1][0] === 'role') ) {
-        nd = data.filter(item => item[filterArr[0][0][0]] === filterArr[0][0][1] && item[filterArr[1][0][0]] === filterArr[1][0][1] )
-      } else if((filterArr[0][0][0] === 'level' || filterArr[0][0][0] === 'role') && (filterArr[1][0][0] !== 'level' || filterArr[1][0][0] !== 'role')) {
-        nd = data.filter(item => item[filterArr[0][0][0]] === filterArr[0][0][1] && item[filterArr[1][0][0]].includes(filterArr[1][0][1]) )
-      } else if((filterArr[0][0][0] !== 'level' || filterArr[0][0][0] !== 'role') && (filterArr[1][0][0] === 'level' || filterArr[1][0][0] === 'role')) {
-        nd = data.filter(item => item[filterArr[0][0][0]].includes(filterArr[0][0][1]) && item[filterArr[1][0][0]] === filterArr[1][0][1] )
-      } else  {
-        nd = data.filter(item => item[filterArr[0][0][0]].includes(filterArr[0][0][1]) && item[filterArr[1][0][0]].includes(filterArr[1][0][1]) )
-      }
+      filters.forEach( item => {
+        let arr = Object.entries(item)
+        let key = arr[0][0]
+        let value = arr[0][1]
+        info = info.filter( item => item[key] === value || item[key].includes(value))
+      })
     }
-
-    console.log("filterarr " ,filterArr)
-    setNewData(nd)
-    
+    setNewData(info)
   }
 
   useEffect(() => {
-    upDateData(filters)
+    updateData(filters)
   },[filters])
 
  
@@ -98,10 +78,7 @@ function App() {
           </section>
         }
 
-        {
-          ( filters && newData )
-            ? 
-            <main className={ styles.Main }> 
+        <main className={ styles.Main }> 
             {
               newData.map( item => (
                 <Card  
@@ -122,30 +99,7 @@ function App() {
               ))
             
             }
-          </main>
-          :
-          <main className={ styles.Main }> 
-          {
-            data.map( item => (
-              <Card  
-                key={ item.id } 
-                company={ item.company } 
-                logo={ item.logo } 
-                new={ item.new }
-                featured={ item.featured }
-                position={ item.position } 
-                postedAt = { item.postedAt }
-                contract={ item.contract }
-                location={ item.location }
-                role={ item.role }
-                level={ item.level }
-                languages={ item.languages }
-                tools={ item.tools }
-                />
-            ))
-          }
         </main>
-        }
       </section>
 
     </AppContext.Provider>

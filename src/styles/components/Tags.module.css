@@ -14,3 +14,8 @@
 .Tags h2 {
     padding: 0px 5px;
 }
+
+.Tags:hover {
+    background: var(--Desaturated-Dark-Cyan);
+    color: white;
+}
